@@ -360,9 +360,13 @@
   .pcard h3{font-size:16.5px;line-height:1.24;font-weight:700}
   .pcard .ex{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:9px}
   .pcard .m{margin-top:auto;padding-top:14px;font-size:11.5px;color:var(--muted);display:flex;gap:12px}
-  @media(max-width:960px){.posts{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:960px){
+    .posts{grid-template-columns:repeat(3,1fr)}
+    .posts .pcard:nth-child(4){display:none}   /* tablet: 3 in one row */
+  }
   @media(max-width:520px){
     .posts{grid-template-columns:repeat(2,1fr);gap:12px}
+    .posts .pcard:nth-child(4){display:flex}   /* mobile: bring the 4th back → 2×2 */
     .pcard .pc{padding:12px 12px 13px}
     .pcard h3{font-size:14px;line-height:1.2}
     .pcard .ex{font-size:11.5px;margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
